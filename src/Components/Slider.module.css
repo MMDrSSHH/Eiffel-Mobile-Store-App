@@ -1,0 +1,17 @@
+.swiper {
+    width: 100%;
+    height: calc(100vh - 60px) !important;
+    background-color: #fff;
+}
+
+.swiperSlide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.swiperSlide h1 {
+    position: absolute;
+    left: 50px;
+    top: 400px;
+}

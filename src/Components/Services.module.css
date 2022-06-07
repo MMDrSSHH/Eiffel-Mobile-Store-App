@@ -1,0 +1,23 @@
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 50px;
+    justify-content: center;
+    margin: 0 auto 100px;
+    width: 80%;
+    padding-top: 80px;
+    position: relative;
+}
+
+.services::before {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #11081b;
+    position: absolute;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}

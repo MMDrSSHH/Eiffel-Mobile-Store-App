@@ -1,0 +1,104 @@
+.cartPage {
+    width: 80%;
+    margin: 100px auto 100px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 50px;
+}
+
+.carts {
+    display: grid;
+    gap: 25px;
+}
+
+.checkoutContainer {
+    position: relative;
+}
+
+.checkout {
+    position: sticky;
+    top: 100px;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.totall {
+    margin-top: 10px;
+    color: #777;
+}
+
+.totall span {
+    padding: 5px;
+    background-color: #5bcbffe3;
+    color: #2634ff;
+    font-size: 18px;
+    margin-right: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.buttonsContainer {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.buttonsContainer button {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    border: none;
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.checkoutButton {
+    background-color: #5bcbffe3 !important;
+    margin-left: 20px;
+}
+
+.checkoutButton:hover {
+    background-color: #33bdfde3 !important;
+}
+
+.clearButton {
+    box-shadow: inset 0 0 0 3px #5bcbffe3;
+}
+
+.clearButton:hover {
+    background-color: #5bcbffe3;
+    box-shadow: inset 0 0 0 3px #33bdfde3;
+}
+
+@media screen and (max-width: 1280px) {
+    .cartPage {
+        width: 80%;
+        margin: 100px auto 100px;
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 50px;
+    }
+}

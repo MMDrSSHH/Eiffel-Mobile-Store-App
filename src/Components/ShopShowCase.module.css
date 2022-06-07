@@ -1,0 +1,18 @@
+.shopShowCase {
+    width: 80%;
+    margin: 100px auto 100px;
+}
+
+.shopShowCaseTitle {
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 45px;
+}
+
+.shopShowCaseProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+    justify-content: center;
+    gap: 30px;
+}
+

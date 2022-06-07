@@ -1,0 +1,9 @@
+.productsContainer {
+    width: 80%;
+    margin: 150px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+    justify-content: center;
+    gap: 30px;
+    /* margin-top: 150px; */
+}

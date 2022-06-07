@@ -1,0 +1,71 @@
+.cartItemContainer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.imageContainer {
+    width: 200px;
+    height: 100%;
+}
+
+.imageContainer img {
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+}
+
+.textContainer {
+
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+}
+
+.smallButton {
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    padding: 9px 25px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin: 0 10px;
+}
+
+.rmvButton,
+.decButton {
+    box-shadow: inset 0 0 0 3px #5bcbffe3;
+}
+
+.incButton {
+    background-color: #5bcbffe3;
+}
+
+.incButton:hover {
+    background-color: #33bdfde3;
+}
+
+.rmvButton:hover,
+.decButton:hover {
+    background-color: #5bcbffe3;
+    box-shadow: inset 0 0 0 3px #33bdfde3;
+}
