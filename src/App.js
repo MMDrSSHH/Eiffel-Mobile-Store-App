@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import "./App.css";
@@ -10,11 +11,24 @@ import ProductDetails from './pages/ProductDetails';
 import CartPage from './pages/CartPage';
 
 // Components
-import ProductContextProvider from './contexts/ProductContextProvider';
 import Footer from './Components/Footer';
+
+
+// Contexts
+import ProductContextProvider from './contexts/ProductContextProvider';
 import CartContextProvider from './contexts/CartContextProvider';
+import { ThemeContext } from './contexts/ThemeContextProvider';
 
 function App() {
+  const { darkTheme } = useContext(ThemeContext);
+
+  // Changing the background theme
+  if (darkTheme) {
+    document.body.className = "dark";
+  } else {
+    document.body.className = "";
+  }
+
   return (
     <>
       <ProductContextProvider>

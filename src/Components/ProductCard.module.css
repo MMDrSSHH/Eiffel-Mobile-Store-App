@@ -66,6 +66,11 @@
     -o-border-radius: 5px;
     display: block;
     text-align: center;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
 .linkButton:hover {
@@ -91,3 +96,34 @@
     color: rgb(123, 0, 0);
     margin-right: 5px;
 } */
+
+
+/* Dark Theme Styles */
+
+.cardContainer.dark {
+    background-color: var(--primary-dark);
+    box-shadow: none;
+}
+
+.cardContainer.dark .title {
+    color: var(--third-dark);
+}
+
+.cardContainer.dark .priceContainer {
+    color: var(--third-dark);
+}
+
+.cardContainer.dark .price {
+    background-color: var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.cardContainer.dark .linkButton {
+    background-color: var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.cardContainer.dark .linkButton:hover {
+    /* background-color: var(--third-dark); */
+    color: var(--fourth-dark);
+}

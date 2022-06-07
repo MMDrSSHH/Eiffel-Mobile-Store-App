@@ -1,14 +1,20 @@
 .nav {
-    /* background-color: rgba(17, 8, 27, 0.7); */
-    background-color: var(--navy-blue);
-    /* box-shadow: 0px 3px 18px #7e7e7e73; */
+    /*background-color: rgba(17, 8, 27, 0.7);
+    */
+    background-color: var(--secondary-dark);
+    /*box-shadow: 0px 3px 18px #7e7e7e73;
+    */
     height: 60px;
     display: flex;
     align-items: center;
     position: fixed;
     z-index: 10;
     width: 100%;
-    backdrop-filter: blur(5px);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
 .fillElement {
@@ -17,7 +23,7 @@
 }
 
 .activeLink {
-    color: var(--ghost-white) !important;
+    color: #fff !important;
     cursor: default;
 }
 
@@ -38,14 +44,19 @@
     align-items: center;
 }
 
-.container ul li a {
+.navLink {
     font-size: 22px;
-    color: var(--lavender-web);
+    color: var(--fourth-dark);
     font-weight: 900;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
-.container ul li a:hover {
-    color: var(--ghost-white);
+.navLink:hover {
+    color: #fff;
 }
 
 .sidebarBtn {
@@ -67,13 +78,17 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    background-color: #9551e3;
+    background-color: var(--third-dark);
 }
 
 .cartContainer {
     position: relative;
     cursor: pointer;
     margin-left: 30px;
+}
+
+.cartContainer svg {
+    color: var(--third-dark) !important;
 }
 
 .cartBadge {
@@ -84,7 +99,8 @@
     width: 25px;
     height: 25px;
     padding: 5px;
-    background-color: aliceblue;
+    background-color: var(--third-dark);
+    color: var(--primary-dark);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -92,8 +108,52 @@
     -o-border-radius: 50%;
     top: -8px;
     right: -8px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 700;
 }
+
+.themeToggler {
+    background-color: transparent;
+    margin-left: 30px;
+    border: none;
+}
+
+.themeToggler svg {
+    font-size: 40px;
+    color: var(--third-dark);
+}
+
+/* Dark theme */
+.nav.dark {
+    background-color: var(--primary-dark);
+}
+
+.nav.dark .navLink {
+    color: var(--secondary-dark);
+}
+
+.nav.dark .navLink:hover {
+    color: var(--third-dark);
+}
+
+.nav.dark .activeLink {
+    color: var(--third-dark) !important;
+}
+
+.nav.dark .cartContainer svg {
+    color: var(--third-dark) !important;
+}
+
+.nav.dark .cartBadge {
+    background-color: var(--third-dark);
+    color: var(--primary-dark);
+}
+
+.nav.dark .themeToggler svg {
+    color: var(--fourth-dark);
+}
+
+
 
 /* .brandIcon img {
     width: 100%;

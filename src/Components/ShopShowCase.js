@@ -9,12 +9,13 @@ import { ProductContext } from '../contexts/ProductContextProvider';
 
 // Css styles
 import styles from "./ShopShowCase.module.css";
+import { ThemeContext } from '../contexts/ThemeContextProvider';
 
 const ShopShowCase = () => {
     const products = useContext(ProductContext);
-
+    const { darkTheme } = useContext(ThemeContext);
     return (
-        <section className={styles.shopShowCase}>
+        <section className={`${styles.shopShowCase} ${darkTheme ? styles.dark : ""}`}>
             <h3 className={styles.shopShowCaseTitle}>برترین ها</h3>
             <div className={styles.shopShowCaseProducts}>
                 {

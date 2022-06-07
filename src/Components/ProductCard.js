@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -11,14 +11,16 @@ import { shortenText } from '../helpers/functions';
 
 // Css style
 import styles from "./ProductCard.module.css";
+import { ThemeContext } from '../contexts/ThemeContextProvider';
 
 const ProductCard = ({ data }) => {
 
 
     const { title, image, price, id } = data;
+    const {darkTheme} = useContext(ThemeContext);
 
     return (
-        <div className={styles.cardContainer}>
+        <div className={`${styles.cardContainer} ${darkTheme ? styles.dark : ""}`}>
             <div>
                 <img className={styles.image} src={image} alt={shortenText(title, 2)} />
                 <span className={styles.title}>

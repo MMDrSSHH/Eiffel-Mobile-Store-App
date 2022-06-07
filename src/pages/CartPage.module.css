@@ -90,7 +90,48 @@
 
 .clearButton:hover {
     background-color: #5bcbffe3;
-    box-shadow: inset 0 0 0 3px #33bdfde3;
+    box-shadow: inset 0 0 0 3px #5bcbffe3;
+}
+
+
+
+/* Dark Theme Styles */
+
+.cartPage.dark .checkout {
+    background-color: var(--primary-dark);
+    border: 1px solid var(--fourth-dark);
+}
+
+.cartPage.dark .title {
+    color: var(--third-dark);
+}
+
+.cartPage.dark .totall {
+    color: var(--third-dark);
+}
+
+.cartPage.dark .totall span {
+    background-color: var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.cartPage.dark .checkoutButton {
+    background-color: var(--secondary-dark) !important;
+    color: var(--third-dark);
+}
+
+.cartPage.dark .checkoutButton:hover {
+    color: var(--fourth-dark);
+}
+
+.cartPage.dark .clearButton {
+    box-shadow: inset 0 0 0 3px var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.cartPage.dark .clearButton:hover {
+    background-color: var(--secondary-dark);
+    color: var(--fourth-dark);
 }
 
 @media screen and (max-width: 1280px) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 
 // Css styles
@@ -11,11 +11,17 @@ import WhatsappOutlinedIcon from '@mui/icons-material/WhatsappOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 
+// Contexts
+import {ThemeContext} from "../contexts/ThemeContextProvider";
+
 
 
 const Footer = () => {
+
+    const { darkTheme } = useContext(ThemeContext);
+
     return (
-        <footer className={styles.footer}>
+        <footer className={`${styles.footer} ${darkTheme ? styles.dark : ""}`}>
             <div className={styles.footerContainer}>
                 <h2 className={styles.heading}>Eiffel Mobile Store and Repairs</h2>
                 <div className={styles.contactUsContainer}>

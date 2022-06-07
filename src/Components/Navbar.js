@@ -14,12 +14,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import brandIcon from "../assets/brandIcon.png";
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 // Custom hooks
 import useWindowSize from '../hooks/useWindowSize';
 
 // Context
 import { CartContext } from "../contexts/CartContextProvider";
+import { ThemeContext } from '../contexts/ThemeContextProvider';
 
 const Navbar = () => {
   const [menuShow, setMenuShow] = useState(false);
@@ -27,6 +30,7 @@ const Navbar = () => {
   const cartIcon = useRef(null);
 
   const { state } = useContext(CartContext);
+  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
 
   const sidebarHandler = (value) => {
     setMenuShow(value);
@@ -35,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${darkTheme ? styles.dark : ""}`}>
         <div className={styles.container}>
           <div className={styles.leftSide}>
             <img src={brandIcon} alt="Eiffel" />
@@ -46,17 +50,17 @@ const Navbar = () => {
               <ShoppingCartOutlinedIcon ref={cartIcon} className={styles.cartIcon} sx={{ fontSize: 38, color: "#fff" }} />
               <span className={styles.cartBadge}>{state.totallVariants}</span>
             </Link>
+            <button className={styles.themeToggler} onClick={() => setDarkTheme(!darkTheme)}>{!darkTheme ? <WbSunnyOutlinedIcon /> : <DarkModeOutlinedIcon />}</button>
           </div>
-
           <ul>
             <li>
-              <NavLink exact activeClassName={styles.activeLink} to="/">خانه</NavLink>
+              <NavLink exact activeClassName={styles.activeLink} className={styles.navLink} to="/">خانه</NavLink>
             </li>
             <li>
-              <NavLink exact activeClassName={styles.activeLink} to="/store">فروشگاه</NavLink>
+              <NavLink exact activeClassName={styles.activeLink} className={styles.navLink} to="/store">فروشگاه</NavLink>
             </li>
             <li>
-              <NavLink exact activeClassName={styles.activeLink} to="/about-us">درباره ما</NavLink>
+              <NavLink exact activeClassName={styles.activeLink} className={styles.navLink} to="/about-us">درباره ما</NavLink>
             </li>
           </ul>
           <button className={styles.sidebarBtn} onClick={() => sidebarHandler(true)}>

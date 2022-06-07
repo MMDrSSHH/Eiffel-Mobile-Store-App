@@ -10,14 +10,23 @@
 
 body {
   overflow-x: hidden;
-  /* background: linear-gradient(240deg, rgba(174, 54, 255, 0.4) 0%, rgba(235, 173, 255, 0.1) 100%); */
   background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url("./assets/Circuit Board.svg");
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
+body.dark {
+  background-image: linear-gradient(rgba(0, 3, 67, 0.7), rgba(0, 3, 67, 0.7)), url("./assets/Circuit Board Dark.svg");
+}
+
+
 :root {
-  --navy-blue: #04004c;
-  --medium-blue: #0102D8ff;
-  --ghost-white: #f4f7fe;
-  --lavender-web: #d3d4d8;
-  --black: #000000ff;
+  /* Dark theme colors and style root */
+  --primary-dark: #272727;
+  --secondary-dark: #6572ff;
+  --third-dark: #e9e9e9;
+  --fourth-dark: #FFD700;
 }

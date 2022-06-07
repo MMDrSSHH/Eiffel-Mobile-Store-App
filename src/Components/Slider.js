@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
 
@@ -9,10 +9,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+// Contexts
+import { ThemeContext } from '../contexts/ThemeContextProvider';
+
 
 
 const Slider = () => {
 
+    const { darkTheme } = useContext(ThemeContext);
 
     return (
         <Swiper
@@ -25,7 +29,7 @@ const Slider = () => {
             }}
             navigation={true}
             modules={[Pagination, Navigation]}
-            className={styles.swiper}
+            className={`${styles.swiper} ${darkTheme ? styles.dark : ""}`}
         >
             <SwiperSlide
                 className={styles.swiperSlide}

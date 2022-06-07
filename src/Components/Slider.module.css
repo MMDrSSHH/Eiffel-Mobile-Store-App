@@ -15,3 +15,7 @@
     left: 50px;
     top: 400px;
 }
+
+.swiper.dark {
+    background-color: var(--secondary-dark);
+}

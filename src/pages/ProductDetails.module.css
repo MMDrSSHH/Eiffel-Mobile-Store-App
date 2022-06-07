@@ -5,7 +5,7 @@
     flex-direction: row-reverse;
     background-color: #fff;
     justify-content: space-around;
-    padding: 40px 0 20px 0;
+    padding: 40px 0 30px 0;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -41,6 +41,7 @@
 
 .description {
     text-align: left;
+    font-size: 18px;
 }
 
 .priceContainer {
@@ -125,10 +126,88 @@
     box-shadow: inset 0 0 0 3px #33bdfde3;
 }
 
-
-
 .addButton:hover {
     background-color: #33bdfde3;
+}
+
+.quantity {
+    color: #5bcbffe3;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+
+
+
+/* Dark Theme Stylse */
+
+.container.dark {
+    background-color: var(--primary-dark);
+}
+
+.container.dark .title,
+.container.dark .description {
+    color: var(--third-dark);
+    background-color: var(--secondary-dark);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.container.dark .title {
+    display: inline-block;
+    padding: 10px;
+    align-self: center;
+}
+
+.container.dark .description {
+    padding: 20px;
+}
+
+.container.dark .priceContainer {
+    color: var(--third-dark);
+}
+
+.container.dark .price {
+    background-color: var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.container.dark .addButton {
+    background-color: var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.container.dark .addButton:hover {
+    color: var(--fourth-dark);
+}
+
+.container.dark .rmvButton,
+.container.dark .decButton {
+    box-shadow: inset 0 0 0 3px var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.container.dark .incButton {
+    background-color: var(--secondary-dark);
+    color: var(--third-dark);
+}
+
+.container.dark .incButton:hover {
+    color: var(--fourth-dark);
+}
+
+.container.dark .rmvButton:hover,
+.container.dark .decButton:hover {
+    background-color: var(--secondary-dark);
+    color: var(--fourth-dark);
+    box-shadow: inset 0 0 0 3px var(--secondary-dark);
+}
+
+.container.dark .quantity {
+    color: var(--secondary-dark);
 }
 
 @media screen and (max-width: 1024px) {

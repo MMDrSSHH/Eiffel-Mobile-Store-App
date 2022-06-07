@@ -147,3 +147,20 @@
     border-bottom: 1px solid #d4dbe2;
     padding: 5px 0;
 }
+
+
+
+
+/* Dark Theme Styles */
+
+.footer.dark {
+    background-color: #151515;
+}
+
+.footer.dark .heading {
+    color: var(--third-dark);
+}
+
+.footer.dark .heading::before {
+    background-color: var(--third-dark);
+}

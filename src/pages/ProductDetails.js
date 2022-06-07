@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from 'react';
 // Context
 import { ProductContext } from '../contexts/ProductContextProvider';
 import { CartContext } from '../contexts/CartContextProvider';
+import { ThemeContext } from '../contexts/ThemeContextProvider';
 
 // Css styles
 import styles from "./ProductDetails.module.css";
@@ -21,8 +22,8 @@ const ProductDetails = ({ match }) => {
     const { id } = match.params;
 
     const products = useContext(ProductContext);
-
     const { state, dispatch } = useContext(CartContext);
+    const {darkTheme} = useContext(ThemeContext);
 
     useEffect(() => {
         if (products.length > 0) {
@@ -34,7 +35,7 @@ const ProductDetails = ({ match }) => {
     const { image, title, description, price } = product;
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${darkTheme ? styles.dark : ""}`}>
             <div className={styles.imgContainer}>
                 <img src={image} alt="product" />
             </div>
@@ -51,9 +52,12 @@ const ProductDetails = ({ match }) => {
                                 <button onClick={() => dispatch({ type: "ADD_TO_CART", payload: product })} className={styles.addButton}>
                                     افزودن به سبد خرید
                                 </button> :
-                                <button className={`${styles.smallButton} ${styles.incButton}`} onClick={() => dispatch({ type: "INCREASE_ITEM", payload: product })}>
-                                    <AddIcon />
-                                </button>
+                                <>
+                                    <button className={`${styles.smallButton} ${styles.incButton}`} onClick={() => dispatch({ type: "INCREASE_ITEM", payload: product })}>
+                                        <AddIcon />
+                                    </button>
+                                    <span className={styles.quantity}>{productQuantityCart(state.items, parseInt(id))}</span>
+                                </>
                         }
                         {
                             productQuantityCart(state.items, parseInt(id)) === 1 &&
