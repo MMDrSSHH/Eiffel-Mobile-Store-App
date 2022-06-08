@@ -31,7 +31,7 @@ const ProductCard = ({ data }) => {
                 قیمت: <span className={styles.price}>{price} $</span>
             </span>
             <div className={styles.buttonContainer}>
-                <Link className={styles.linkButton} to={`store/${id}`}>جزییات محصول</Link>
+                <Link className={styles.linkButton} to={`/store/${id}`}>جزییات محصول</Link>
             </div>
         </div>
     );

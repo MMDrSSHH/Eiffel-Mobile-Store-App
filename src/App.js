@@ -9,6 +9,7 @@ import Store from './pages/Store';
 import AboutUs from './pages/AboutUs';
 import ProductDetails from './pages/ProductDetails';
 import CartPage from './pages/CartPage';
+import Login from "./pages/Login";
 
 // Components
 import Footer from './Components/Footer';
@@ -33,19 +34,36 @@ function App() {
     <>
       <ProductContextProvider>
         <CartContextProvider>
-          <Navbar />
           <Switch>
-            <Route path="/store/:id" component={ProductDetails} />
-            <Route path="/shopping-cart" component={CartPage} />
-            <Route path="/store" component={Store} />
-            <Route path="/about-us" component={AboutUs} />
-            <Route path="/" component={Home} />
+            <Route exact path="/login" component={LoginContainer} />
+            <Route component={DefaultContainer} />
           </Switch>
-          <Footer />
         </CartContextProvider>
       </ProductContextProvider>
     </>
   );
+}
+
+const DefaultContainer = () => {
+  return (
+    <div>
+      <Navbar />
+      <Route exact path="/store/:id" component={ProductDetails} />
+      <Route exact path="/shopping-cart" component={CartPage} />
+      <Route exact path="/store" component={Store} />
+      <Route exact path="/about-us" component={AboutUs} />
+      <Route exact path="/" component={Home} />
+      <Footer />
+    </div>
+  )
+}
+
+const LoginContainer = () => {
+  return (
+    <div>
+      <Route path="/login" component={Login} />
+    </div>
+  )
 }
 
 export default App;

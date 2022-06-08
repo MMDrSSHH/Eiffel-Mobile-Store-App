@@ -1,0 +1,31 @@
+.loginPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 40%;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+}
+
+.imgContainer {
+    flex: 1;
+}
+
+.imgContainer img {
+    width: 100%;
+}
+
+.form {
+    flex: 2;
+}
