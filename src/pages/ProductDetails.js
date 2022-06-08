@@ -51,7 +51,7 @@ const ProductDetails = ({ match }) => {
                         <h2 className={styles.title}>
                             {title}
                         </h2> :
-                        <Placeholder animation="wave" style={{}}>
+                        <Placeholder animation="wave">
                             <Placeholder className={styles.textPlaceholder} xs={12} style={{ padding: "20px" }} />
                         </Placeholder>
                 }

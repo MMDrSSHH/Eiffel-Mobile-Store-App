@@ -30,7 +30,7 @@ const Navbar = () => {
   const cartIcon = useRef(null);
 
   const { state } = useContext(CartContext);
-  const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+  const { darkTheme, themeHandler } = useContext(ThemeContext);
 
   const sidebarHandler = (value) => {
     setMenuShow(value);
@@ -50,7 +50,7 @@ const Navbar = () => {
               <ShoppingCartOutlinedIcon ref={cartIcon} className={styles.cartIcon} sx={{ fontSize: 38, color: "#fff" }} />
               <span className={styles.cartBadge}>{state.totallVariants}</span>
             </Link>
-            <button className={styles.themeToggler} onClick={() => setDarkTheme(!darkTheme)}>{!darkTheme ? <WbSunnyOutlinedIcon /> : <DarkModeOutlinedIcon />}</button>
+            <button className={styles.themeToggler} onClick={() => themeHandler(!darkTheme)}>{!darkTheme ? <WbSunnyOutlinedIcon /> : <DarkModeOutlinedIcon />}</button>
           </div>
           <ul>
             <li>
