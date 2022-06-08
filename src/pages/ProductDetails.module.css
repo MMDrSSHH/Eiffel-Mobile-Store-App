@@ -16,13 +16,14 @@
 
 .imgContainer {
     width: 30%;
+    height: 500px;
     display: flex;
     align-items: center;
 }
 
 .imgContainer img {
     width: 100%;
-    height: 500px;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -136,6 +137,28 @@
     font-weight: 900;
 }
 
+/* Loading placeholders (LIGHT) */
+
+.textPlaceholder {
+    color: #333;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.pricePlaceholder {
+    color: #5bcbffe3;
+    opacity: 1;
+}
+
+.buttonPlaceholder {
+    background-color: #5bcbffe3 !important;
+    border: none;
+    padding: 15px;
+}
+
 
 
 
@@ -209,6 +232,29 @@
 .container.dark .quantity {
     color: var(--secondary-dark);
 }
+
+/* Dark Theme Stylse end */
+
+/* Loading Placeholder (DARK) */
+
+.container.dark .textPlaceholder {
+    color: var(--secondary-dark);
+}
+
+.container.dark .priceTitle {
+    color: var(--third-dark);
+}
+
+.container.dark .pricePlaceholder {
+    opacity: 0.5;
+}
+
+.container.dark .buttonPlaceholder {
+    background-color: var(--secondary-dark) !important;
+}
+
+/* Loading Placeholder (DARK) end */
+
 
 @media screen and (max-width: 1024px) {
     .container {
