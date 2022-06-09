@@ -27,7 +27,7 @@ const servicesData = [
     {
         id: 1,
         title: "تعمیرات تخصصی",
-        icon: <HandymanOutlinedIcon sx={{fontSize: 35}} />,
+        icon: <HandymanOutlinedIcon sx={{ fontSize: 35 }} />,
         description: "با تخصصی که ما توی تعمیرات داریم گوشیت دیگه مریض نمی‌مونه. پس نگرانی رو بزار کنار و گوشیتو به ما بسپار"
     },
     {
