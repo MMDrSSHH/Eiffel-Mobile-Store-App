@@ -18,11 +18,14 @@ const productQuantityCart = (items, id) => {
 }
 
 
+
+const emailRegex = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
+
 // Validates the input entered by the user
 const formValidation = (data, type) => {
     const errors = {};
-    
-    
+
+
     if (!data.userName.trim()) {
         errors.userName = "نام کاربری وارد نکردی!";
     } else if (data.userName.trim().length < 5) {
@@ -37,6 +40,24 @@ const formValidation = (data, type) => {
         errors.password = "رمز عبور کوتاهی انتحاب کردی!";
     } else {
         delete errors.password;
+    }
+
+    if (type === "SIGNIN") {
+        if (!data.email.trim().length) {
+            errors.email = "ایمیل خودت رو وارد کن!";
+        } else if (!emailRegex.test(data.email.trim())) {
+            errors.email = "ایمیل قابل قبول وارد کن!";
+        } else {
+            delete errors.email;
+        }
+
+        if (!data.confirmPassword.trim()) {
+            errors.confirmPassword = "تکرار رمز عبور رو وارد کن!"
+        } else if (data.confirmPassword.trim() !== data.password.trim()) {
+            errors.confirmPassword = "رمز یکسان وارد کن!";
+        } else {
+            delete errors.confirmPassword;
+        }
     }
 
     return errors;
