@@ -1,0 +1,213 @@
+.signinPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 80%;
+    margin: auto;
+}
+
+.signinContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    /* width: 55%; */
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+}
+
+.imgContainer {
+    flex: 2;
+}
+
+.imgContainer img {
+    width: 100%;
+}
+
+.form {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+    position: relative;
+}
+
+.formTitle {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 80px;
+}
+
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px
+}
+
+.inputLabel {
+    margin: 0 5px 10px 0;
+    font-size: 20px;
+}
+
+.inputField {
+    padding: 10px 6px;
+    outline: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    background-color: aliceblue;
+    font-size: 18px;
+}
+
+.buttonContainer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    margin-top: 110px;
+}
+
+.signinButton {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    font-size: 28px;
+    width: 80%;
+    padding: 5px 10px;
+    background-color: #5bcbffe3;
+}
+
+.signinLink {
+    margin-top: 20px;
+    color: #333;
+}
+
+.error {
+    display: inline-block;
+    max-width: 40%;
+    text-align: center;
+    background-color: #ff1f1f40;
+    color: #9b0000;
+    padding: 2px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin: 10px 5px 0 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* Password qualifier styles */
+
+.passwordQualifier {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 5px 0 0;
+}
+
+.qualifierField {
+    background-color: transparent;
+    width: 60px;
+    height: 8px;
+    border: 1px solid #333;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.weak .qualifierField:nth-child(1) {
+    border: none;
+    background-color: #9b0000;
+}
+
+.fair .qualifierField:nth-child(-n + 2) {
+    border: none;
+    background-color: orange;
+}
+
+.strong .qualifierField {
+    border: none;
+    background-color: green;
+}
+
+.qualifierText {
+    margin: 10px 5px 0 0;
+}
+
+.themeToggler {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.themeToggler svg {
+    font-size: 40px;
+    color: var(--primary-dark);
+}
+
+
+/* Dark Theme Styles */
+
+.dark .signinContainer {
+    background-color: var(--primary-dark);
+}
+
+.dark .formTitle {
+    color: var(--third-dark);
+}
+
+.dark .inputLabel {
+    color: var(--third-dark);
+}
+
+.dark .qualifierField {
+    border-color: var(--third-dark);
+}
+
+.dark .imgContainer img {
+    color: var(red);
+}
+
+.dark .themeToggler {
+    box-shadow: 0 0 10px var(--fourth-dark);
+}
+
+.dark .themeToggler svg {
+    color: var(--fourth-dark);
+}
+
+.dark .signinButton {
+    color: var(--third-dark);
+    background-color: var(--secondary-dark);
+}
+
+.dark .signinLink {
+    color: var(--third-dark);
+}
