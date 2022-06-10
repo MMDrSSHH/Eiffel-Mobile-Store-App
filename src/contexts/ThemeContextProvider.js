@@ -5,7 +5,7 @@ export const ThemeContext = createContext();
 
 
 const ThemeContextProvider = ({ children }) => {
-    const [darkTheme, setDarkTheme] = useState(!!localStorage.getItem("appTheme") ? true : false);
+    const [darkTheme, setDarkTheme] = useState(!!JSON.parse(localStorage.getItem("appTheme")) ? true : false);
 
 
     // In the themeHandler the value of the theme will persist between page refreshes
