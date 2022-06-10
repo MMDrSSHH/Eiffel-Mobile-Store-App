@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useState } from 'react';
+import React, { useReducer, useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
@@ -10,9 +10,15 @@ import styles from './Signin.module.css';
 
 // Images and icons
 import eiffelTowerSVG from "../assets/EiffelTower.svg";
+import eiffelTowerDarkSVG from "../assets/EiffelTowerDark.svg";
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 // Helper functions
-import { formValidation } from '../helpers/functions';
+import { formValidation, passwordQualifier } from '../helpers/functions';
+
+// Context
+import { ThemeContext } from '../contexts/ThemeContextProvider';
 
 
 const initialState = {
@@ -63,6 +69,7 @@ const Signin = ({ history }) => {
         confirmPassword: false,
     });
     const [show, setShow] = useState(false);
+    const { darkTheme, setDarkTheme } = useContext(ThemeContext);
 
     useEffect(() => {
         setErrors(formValidation(state, "SIGNIN"));
@@ -85,11 +92,16 @@ const Signin = ({ history }) => {
         }
     }
 
+    const themeHandler = (event) => {
+        event.preventDefault();
+        setDarkTheme(!darkTheme);
+    }
+
     return (
-        <div className={styles.signinPage}>
+        <div className={`${styles.signinPage} ${darkTheme ? styles.dark : ""}`}>
             <div className={styles.signinContainer}>
                 <div className={styles.imgContainer}>
-                    <img src={eiffelTowerSVG} alt="eiffel-tower" />
+                    <img src={!darkTheme ? eiffelTowerSVG : eiffelTowerDarkSVG} alt="eiffel-tower" />
                 </div>
                 <form className={styles.form}>
                     <h2 className={styles.formTitle}>حساب بساز</h2>
@@ -132,6 +144,26 @@ const Signin = ({ history }) => {
                             onFocus={touchHandler}
                         />
                         {
+                            touch.password &&
+                            <>
+                                <div
+                                    className={`${styles.passwordQualifier}
+                                            ${passwordQualifier(state.password) === "Weak Password" ? styles.weak : ""}
+                                            ${passwordQualifier(state.password) === "Fair Password" ? styles.fair : ""}
+                                            ${passwordQualifier(state.password) === "Strong Password" ? styles.strong : ""}`}
+                                >
+                                    <div className={styles.qualifierField}></div>
+                                    <div className={styles.qualifierField}></div>
+                                    <div className={styles.qualifierField}></div>
+                                </div>
+                                <span className={styles.qualifierText}>
+                                    {
+                                        passwordQualifier(state.password)
+                                    }
+                                </span>
+                            </>
+                        }
+                        {
                             errors.password && touch.password && <span className={styles.error}>{errors.password}</span>
                         }
                     </div>
@@ -157,6 +189,9 @@ const Signin = ({ history }) => {
                             حساب کاربری داری؟
                         </Link>
                     </div>
+                    <button className={styles.themeToggler} onClick={themeHandler}>
+                        {!darkTheme ? <WbSunnyOutlinedIcon /> : <DarkModeOutlinedIcon />}
+                    </button>
                 </form>
             </div>
             {

@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useReducer, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -7,8 +7,14 @@ import styles from "./Login.module.css";
 
 // Images and icons
 import eiffelTowerSVG from "../assets/EiffelTower.svg";
+import eiffelTowerDarkSVG from "../assets/EiffelTowerDark.svg";
 import { formValidation } from '../helpers/functions';
 import ModalMessage from '../Components/ModalMessage';
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+
+// Contexts
+import { ThemeContext } from '../contexts/ThemeContextProvider';
 
 
 
@@ -43,6 +49,7 @@ const Login = ({ history }) => {
         password: false,
     });
     const [show, setShow] = useState(false);
+    const {darkTheme, setDarkTheme} = useContext(ThemeContext);
 
     useEffect(() => {
         setErrors(formValidation(state, "LOGIN"));
@@ -65,11 +72,16 @@ const Login = ({ history }) => {
         }
     }
 
+    const themeHandler = (event) => {
+        event.preventDefault();
+        setDarkTheme(!darkTheme);
+    }
+
     return (
-        <div className={styles.loginPage}>
+        <div className={`${styles.loginPage} ${darkTheme ? styles.dark : ""}`}>
             <div className={styles.loginContainer}>
                 <div className={styles.imgContainer}>
-                    <img src={eiffelTowerSVG} alt="eiffel-tower" />
+                    <img src={!darkTheme ? eiffelTowerSVG : eiffelTowerDarkSVG} alt="eiffel-tower" />
                 </div>
                 <form className={styles.form}>
                     <h2 className={styles.formTitle}>وارد شو</h2>
@@ -109,6 +121,9 @@ const Login = ({ history }) => {
                             هنوز حساب کاربری نداری؟
                         </Link>
                     </div>
+                    <button className={styles.themeToggler} onClick={themeHandler}>
+                        {!darkTheme ? <WbSunnyOutlinedIcon /> : <DarkModeOutlinedIcon />}
+                    </button>
                 </form>
             </div>
             {

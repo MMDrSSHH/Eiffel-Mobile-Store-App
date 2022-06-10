@@ -18,9 +18,8 @@ const productQuantityCart = (items, id) => {
 }
 
 
-
+// Regexp for email validation
 const emailRegex = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
-
 // Validates the input entered by the user
 const formValidation = (data, type) => {
     const errors = {};
@@ -36,7 +35,7 @@ const formValidation = (data, type) => {
 
     if (!data.password.trim()) {
         errors.password = "رمز عبور وارد نکردی!";
-    } else if (data.password.trim().length < 8) {
+    } else if (data.password.trim().length < 6) {
         errors.password = "رمز عبور کوتاهی انتحاب کردی!";
     } else {
         delete errors.password;
@@ -63,4 +62,38 @@ const formValidation = (data, type) => {
     return errors;
 }
 
-export { shortenText, productQuantityCart, formValidation };
+
+const passwordQualifier = (password) => {
+    
+    const fairLength = password.length >= 6 && password.length < 8;
+    const goodLength = password.length >= 8;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+
+    const characterScore = hasLowerCase + hasUpperCase + hasNumbers
+    // console.log("upper case", hasUpperCase);
+    // console.log("lower case", hasLowerCase);
+    // console.log("number", hasNumbers);
+    // if (hasLowerCase + hasUpperCase + hasNumbers  === 1 && !hasEnoughLength) {
+    //     return "Weak Password";
+    // } else if (hasLowerCase + hasUpperCase + hasNumbers === 2 && hasEnoughLength) {
+    //     return "Fair Password";
+    // } else if (hasLowerCase + hasUpperCase + hasNumbers === 3 && hasEnoughLength) {
+    //     return "Strong Password";
+    // }
+    if (characterScore === 1 && fairLength) {
+        return "Weak Password";
+    } else if (characterScore >= 2 && fairLength) {
+        return "Fair Password";
+    } else if (characterScore === 1 && goodLength) {
+        return "Weak Password";
+    } else if (characterScore === 2 && goodLength) {
+        return "Fair Password";
+    } else if (characterScore === 3 && goodLength) {
+        return "Strong Password";
+    }
+    return "";
+}
+
+export { shortenText, productQuantityCart, formValidation, passwordQualifier };
