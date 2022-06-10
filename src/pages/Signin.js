@@ -69,7 +69,7 @@ const Signin = ({ history }) => {
         confirmPassword: false,
     });
     const [show, setShow] = useState(false);
-    const { darkTheme, setDarkTheme } = useContext(ThemeContext);
+    const { darkTheme, themeHandler } = useContext(ThemeContext);
 
     useEffect(() => {
         setErrors(formValidation(state, "SIGNIN"));
@@ -92,9 +92,9 @@ const Signin = ({ history }) => {
         }
     }
 
-    const themeHandler = (event) => {
+    const themeButtonHandler = (event) => {
         event.preventDefault();
-        setDarkTheme(!darkTheme);
+        themeHandler(!darkTheme);
     }
 
     return (
@@ -189,7 +189,7 @@ const Signin = ({ history }) => {
                             حساب کاربری داری؟
                         </Link>
                     </div>
-                    <button className={styles.themeToggler} onClick={themeHandler}>
+                    <button className={styles.themeToggler} onClick={themeButtonHandler}>
                         {!darkTheme ? <WbSunnyOutlinedIcon /> : <DarkModeOutlinedIcon />}
                     </button>
                 </form>
